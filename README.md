@@ -1,17 +1,21 @@
 # Computer Vision for Playing Cards
 
 abstract
+---
   This project is a real time image classifier of playing cards. It currently recognizes 6 classes, them being 8, 9, 10, Jack, Queen, King.  We trained the Tensorflow's official models using a few hundred images of playing cards with an appropriate amount of noise. Specifically we trained on Tensorflow's faster-rcnn-inception-v2 model. 
   The real time 
 
 contributors
-Edward Zhong
-Fluellen Arman Umali
+---
+- Edward Zhong
+- Fluellen Arman Umali
 
 motivation
-
+---
+A strong interest in computer vision lead us to the idea for this project. Growing up as a young lad in the California Bay Area, I always saw self-driving cars being tested, and I wondered how they would work. Learning computer vision through a card project would provide insight into how it does function, and although driving is undoubtedly more complicated than playing a card game, perhaps learning how cards are detected and differentiated can allow us to begin to see how a car detects people and lines on the road. Additionally, building a program that can play a card game given only a video feed would be a very interesting project in itself, and would provide a fine result.
 
 methodology
+---
     Data Collection
       We gathered our data by taking a few thousand images of cards on an Iphone 10. We then uploaded the images, compressed it to 720x1080. This generally meaning that each image is less than 200 kilobytes. 
       We labeled our images using labelimg. labelimg allows one to create boxes that contain a specific class. labelimg saves this data as xml files, which will be used as generate inputs for TensorFlows trainer. Before we train our classifier, 
@@ -23,7 +27,14 @@ methodology
        
           
 Summary and Resources
+---
 
-Key Results
+Ongoning Progress
+---
+Currently we have a working prototype, however, there are a number of limitations that will be listed as follows:
+- it takes 16 hours to train and it runs very slowly (<1 fps)
+- it can only detect 6 classes: 9, 10, J, Q, K, A, without the suits
+- it is not completely accurate, the most common issue being confusing different face cards with Jack
+- it does not handle overlapped cards very well, often getting them wrong
 
-Future Works
+<img src="img/proto.png" alt="example of prototype working" title="example of prototype working">
